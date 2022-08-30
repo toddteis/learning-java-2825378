@@ -4,7 +4,8 @@ public class Main {
 
     public static double calculateEmployeeSalary(double hoursWorkedPerWeek, double hourlyRate) {
         double result;
-        result = (hoursWorkedPerWeek * hourlyRate) * 52;
+        double totalHoursWorkedForYear = hoursWorkedPerWeek * 52;
+        result = totalHoursWorkedForYear * hourlyRate;
         return result;
     }
 
