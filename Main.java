@@ -6,6 +6,40 @@ public class Main {
         double result;
         double totalHoursWorkedForYear;
         double totalVacationHoursTaken;
+        Scanner input = new Scanner(System.in);
+
+        if(hoursWorkedPerWeek <= 0) {
+            Boolean isValid = false;
+            while(!isValid) {
+                System.out.println("Hours worked per week is an incorrect value, please enter a positive integer.");
+                hoursWorkedPerWeek = input.nextInt();
+                if(hoursWorkedPerWeek > 0) {
+                    isValid = true;
+                } 
+            }
+        }
+
+        if(hourlyRate <= 0) {
+            Boolean isValid = false;
+            while(!isValid) {
+                System.out.println("Hourly rate is an incorrect value, please enter a positive integer.");
+                hourlyRate = input.nextInt();
+                if(hourlyRate > 0) {
+                    isValid = true;
+                } 
+            }
+        }
+
+        if(totalVacationDays < 0) {
+            Boolean isValid = false;
+            while(!isValid) {
+                System.out.println("Total vacation days is an incorrect value, please enter a positive integer or zero.");
+                totalVacationDays = input.nextInt();
+                if(totalVacationDays >= 0) {
+                    isValid = true;
+                } 
+            }
+        }
 
         totalVacationHoursTaken = totalVacationDays * 8;
         totalHoursWorkedForYear = (hoursWorkedPerWeek * 52) - totalVacationHoursTaken;
